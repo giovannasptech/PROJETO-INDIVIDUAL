@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Mapa de Viagens</title>
+  <style>
+    body {
+      background-color: #ffffff;
+      font-family: 'Poppins', sans-serif;
+      color: #003366;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    header {
+      background-color: #0668d1;
+      color: white;
+      padding: 20px 0;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    #map-container {
+      max-width: 1000px;
+      margin: 40px auto;
+    }
+
+    svg path {
+      fill: #eeeeee;
+      stroke: #cccccc;
+      cursor: pointer;
+      transition: fill 0.3s;
+    }
+
+    svg path:hover {
+      fill: #66aaff;
+    }
+
+    .stats {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+
+    .stats span {
+      font-weight: bold;
+      color: #026bdb;
+    }
+
+    .map-container {
+      width: -50%;
+      height: -100px;
+    }
+
+    .map-container img {
+      width: -10%;
+      height: -20%;
+    }
+  </style>
+</head>
+<body>
+
+<header>🌍 Mapa de Viagens - Clique nos países que você já visitou!</header>
+
+<div id="map-container">
+    <img src = "./imagens/world.svg" alt="Imagem do mapa"/>
+ 
+</div>
+
+<div class="stats">
+  🌐 Você já conheceu <span id="country-count">0</span> país(es)! Isso representa <span id="percent">0%</span> do mundo!
+</div>
+
+<script>
+  const visited = new Set(JSON.parse(localStorage.getItem('visitedCountries')) || []);
+  const totalCountries = 195;
+
+  function updateStats() {
+    const count = visited.size;
+    const percent = ((count / totalCountries) * 100).toFixed(1);
+    document.getElementById("country-count").textContent = count;
+    document.getElementById("percent").textContent = percent + "%";
+    localStorage.setItem('visitedCountries', JSON.stringify(Array.from(visited)));
+  }
+
+  document.querySelectorAll("svg path").forEach(path => {
+    const id = path.id;
+    if (visited.has(id)) {
+      path.style.fill = "#007BFF";
+    }
+
+    path.addEventListener("click", () => {
+      if (visited.has(id)) {
+        visited.delete(id);
+        path.style.fill = "#eeeeee";
+      } else {
+        visited.add(id);
+        path.style.fill = "#007BFF";
+      }
+      updateStats();
+    });
+  });
+
+  updateStats();
+</script>
+
