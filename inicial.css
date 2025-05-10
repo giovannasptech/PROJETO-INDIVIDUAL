@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  body {
+    background: #195eb8;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  }
+
+  header {
+    background-color: white;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  header h2 {
+    font-weight: bold;
+    color: #003580;
+  }
+
+  nav a {
+    font-weight: bold;
+    margin: 0 15px;
+    text-decoration: none;
+    color: #110f79;
+    font-weight: 500;
+   
+
+  }
+
+  .hero {
+    position: relative;
+    background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhpUgby7Mq1n3n8HRd9Ww95BxtSbRC8p8xFmM3_aSb5Fj5CwaG1RcMDqzU0_krE-uAaVSs5xO7NAzv-kQkCTpiyPR3y-oVne-dH0Ghp4NgnU1ihXXN_RW-2zkkxMmV8Ys-erGhYQWyaTZU/s1600/GRECIA.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    color: white;
+    padding: 40px 30px;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+    font-weight: bold;
+    text-shadow: 0.1em 0.1em 0.2em rgba(15, 64, 80, 0.678);
+  }
+
+  .hero p {
+    font-weight: bold;
+    margin-top: 10px;
+    max-width: 500px;
+    font-size: 16px;
+  }
+
+  .hero button {
+    margin-top: 20px;
+    background-color: rgb(2, 48, 117);
+    color: #e8f0fc;
+    padding: 10px 20px;
+    border: none;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .hero button a{
+    color: #fdfdfd;
+    text-decoration: none;
+  }
+
+  .cards {
+    font-weight: bold;
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    display: flex;
+    gap: 10px;
+  }
+
+  .card {
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 120px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+
+  .card img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+  }
+  .card :hover {
+    transform: scale(1.2);
+  }
+
+  .card p {
+    margin: 5px;
+    font-size: 14px;
+  }
+
+  .search-box {
+    background-color: white;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid #ddd;
+  }
+
+  .search-box div {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+  }
+
+  .search-box label {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 5px;
+  }
+
+  .search-box input {
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .search-box button {
+    background-color: #012353;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .tabs {
+    display: flex;
+    justify-content: center;
+    background-color: #f2f2f2;
+    padding: 10px 0;
+  }
+
+  .tabs div {
+    margin: 0 20px;
+    font-weight: bold;
+    color: #003580;
+    cursor: pointer;
+  }
